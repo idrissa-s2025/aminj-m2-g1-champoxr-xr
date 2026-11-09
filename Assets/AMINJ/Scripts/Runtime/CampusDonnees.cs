@@ -12,12 +12,39 @@ namespace Aminj.Campus
     [Serializable] public class Local { public string id; public string nom; public string type; public string code; public string plage; }
     [Serializable] public class Niveau { public string etage; public Local[] locaux; }
     [Serializable] public class Batiment { public string semantic_id; public string plan_num; public string nom; public string nom_usuel; public Niveau[] niveaux; }
+    [Serializable] public class Fiche { public string semantic_id; public string titre; public string role; public string histoire;
+        public string[] pedagogie; public string[] services; public string[] reperes; }
+    [Serializable] public class Campus { public string nom; public string role; public string histoire; public string[] reperes; }
 
     public static class CampusDonnees
     {
         [Serializable] private class Racine { public Batiment[] batiments; }
 
+        [Serializable] private class RacineFiches { public Campus campus; public Fiche[] fiches; }
+
         private static Dictionary<string, Batiment> _batiments;
+        private static Dictionary<string, Fiche> _fiches;
+        private static Campus _campus;
+
+        /// <summary>Les connaissances de l'agent, lues depuis Resources/fiches_batiments.json.</summary>
+        public static IReadOnlyDictionary<string, Fiche> Fiches
+        {
+            get
+            {
+                if (_fiches == null)
+                {
+                    var texte = Resources.Load<TextAsset>("fiches_batiments");
+                    var racine = texte ? JsonUtility.FromJson<RacineFiches>(texte.text) : null;
+                    _campus = racine?.campus;
+                    _fiches = (racine?.fiches ?? Array.Empty<Fiche>())
+                        .Where(f => !string.IsNullOrEmpty(f.semantic_id))
+                        .GroupBy(f => f.semantic_id).ToDictionary(g => g.Key, g => g.First());
+                }
+                return _fiches;
+            }
+        }
+
+        public static Campus LeCampus { get { _ = Fiches; return _campus; } }
 
         public static IReadOnlyDictionary<string, Batiment> Batiments
         {
@@ -35,13 +62,25 @@ namespace Aminj.Campus
             }
         }
 
-        /// <summary>Un resume court, transmis a l'agent comme contexte.</summary>
+        /// <summary>Le contexte transmis a l'agent : le campus, le batiment, ses locaux et sa fiche.</summary>
         public static string Resume(Batiment b)
         {
-            if (b == null) return "";
-            var niveaux = (b.niveaux ?? Array.Empty<Niveau>())
-                .Select(n => $"{n.etage} : {string.Join(", ", (n.locaux ?? Array.Empty<Local>()).Select(l => l.nom))}");
-            return $"Batiment : {b.nom} (n° {b.plan_num} sur le plan)\n" + string.Join("\n", niveaux);
+            var lignes = new List<string>();
+            var c = LeCampus;
+            if (c != null) lignes.Add($"Campus : {c.nom}. {c.role}");
+            if (b == null) return string.Join("\n", lignes);
+            lignes.Add($"Batiment : {b.nom} (numero {b.plan_num} sur le plan)");
+            foreach (var n in b.niveaux ?? Array.Empty<Niveau>())
+                lignes.Add($"{n.etage} : {string.Join(", ", (n.locaux ?? Array.Empty<Local>()).Select(l => l.nom))}");
+            if (Fiches.TryGetValue(b.semantic_id, out var f))
+            {
+                lignes.Add($"Role : {f.role}");
+                lignes.Add($"Histoire : {f.histoire}");
+                if (f.pedagogie?.Length > 0) lignes.Add("Pedagogie : " + string.Join(" ; ", f.pedagogie));
+                if (f.services?.Length > 0) lignes.Add("Services : " + string.Join(" ; ", f.services));
+                if (f.reperes?.Length > 0) lignes.Add("Reperes : " + string.Join(" ; ", f.reperes));
+            }
+            return string.Join("\n", lignes);
         }
     }
 }

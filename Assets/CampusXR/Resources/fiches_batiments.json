@@ -1,4 +1,5 @@
 {
+  "avertissement": "Fiches rédigées à partir des sources listées en fin de fichier. Elles sont transmises à l'agent comme connaissances. À vérifier et compléter par le groupe ; ce qui n'y figure pas, l'agent ne le sait pas.",
   "campus": {
     "nom": "Campus Lapérouse, INU Champollion (Albi)",
     "role": "Site principal et siège de l'Institut national universitaire Jean-François Champollion.",
@@ -56,13 +57,14 @@
         "Salles équipées pour la captation et le travail sur l'image"
       ],
       "services": [
-        "CRIMA, service informatique de l'établissement, premier étage",
+        "DSIUN, direction du système d'information et du numérique, premier étage",
         "Assistance sur les comptes, le réseau et les postes de travail",
         "Salles ouvertes en libre accès hors créneaux de cours"
       ],
       "reperes": [
         "Livrée en 2005",
-        "Bâtiment 5 sur le plan du campus"
+        "Numéro 2 sur le plan du campus",
+        "Appelée aussi « Maison Multimédia »"
       ]
     },
     {
@@ -171,7 +173,7 @@
       "semantic_id": "BAT_07_RESTAURANT_UNIVERSITAIRE",
       "titre": "Restaurant universitaire",
       "role": "Restauration du campus, gérée par le Crous de Toulouse-Occitanie.",
-      "histoire": "Le restaurant et sa cafétéria forment le lieu de vie le plus fréquenté du campus aux heures creuses de la mi-journée : c'est le point de rencontre entre les filières, qui se croisent peu en cours.",
+      "histoire": "Le restaurant et sa cafétéria sont le principal lieu de restauration du campus, fréquenté par toutes les filières à la mi-journée.",
       "pedagogie": [],
       "services": [
         "Repas complet au tarif social étudiant",
@@ -188,7 +190,7 @@
       "semantic_id": "BAT_08_PASCAL_AMBIC",
       "titre": "Bâtiment Pascal(e) Ambic",
       "role": "Maison de la vie étudiante : associations, culture, sport, santé et solidarité.",
-      "histoire": "C'est le bâtiment de la vie hors cours. Tout ce qui n'est ni un amphithéâtre ni un guichet administratif s'y est regroupé : le foyer, les associations, la radio étudiante, l'épicerie solidaire, l'infirmerie. Le nom porté par le bâtiment figure sur le plan du campus ; il n'a pas pu être documenté à partir de sources publiques et n'est donc pas commenté ici.",
+      "histoire": "Bâtiment de la vie étudiante hors cours : foyer, associations, radio étudiante, épicerie solidaire et infirmerie y sont regroupés. L'origine du nom porté sur le plan n'est pas documentée dans les sources publiques consultées.",
       "pedagogie": [
         "Salles de cours au premier étage",
         "Ateliers portés par les associations et l'action culturelle"
@@ -211,7 +213,7 @@
       "semantic_id": "BAT_09_GYMNASE",
       "titre": "Gymnase",
       "role": "Équipement sportif du campus.",
-      "histoire": "Inauguré le 5 mars 2012, le gymnase est l'un des derniers bâtiments ajoutés avant l'extension de 2023. Il a fait passer le sport universitaire d'une pratique dispersée dans les équipements de la ville à une pratique sur site.",
+      "histoire": "Inauguré le 5 mars 2012, le gymnase permet la pratique du sport universitaire sur le site même du campus.",
       "pedagogie": [
         "Créneaux d'enseignement du sport universitaire",
         "Pratique encadrée dans le cadre des unités d'enseignement libres"
@@ -229,7 +231,7 @@
       "semantic_id": "BAT_10_RESIDENCES_ASTROLABE",
       "titre": "Résidence L’Astrolabe",
       "role": "Résidence étudiante du Crous, à l'écart du campus, derrière le gymnase.",
-      "histoire": "Elle porte le nom de L'Astrolabe, l'une des deux frégates de l'expédition de Lapérouse, le même navigateur albigeois que la caserne devenue campus. Le nom fait donc le tour complet : du navire au quartier, puis à la résidence de ceux qui y étudient.",
+      "histoire": "Elle porte le nom de L'Astrolabe, l'une des deux frégates de l'expédition de Lapérouse, le navigateur albigeois qui a aussi donné son nom à la caserne devenue campus.",
       "pedagogie": [],
       "services": [
         "68 logements de 16 à 25 m²",
@@ -241,14 +243,14 @@
       "reperes": [
         "68 logements",
         "Nom emprunté à la frégate de Lapérouse",
-        "Derrière le gymnase, à 81 m — la plus éloignée des deux résidences"
+        "Derrière le gymnase, la plus éloignée des deux résidences"
       ]
     },
     {
       "semantic_id": "BAT_10_RESIDENCES",
       "titre": "Résidence étudiante, côté IFMS",
-      "role": "Résidence étudiante du Crous, à quarante-six mètres de l'institut de santé.",
-      "histoire": "C'est la résidence étudiante du campus même : on sort de la chambre et on est en cours. Un héritage direct de l'emprise militaire, assez vaste pour loger et enseigner sur le même îlot.",
+      "role": "Résidence étudiante du Crous, côté IFMS.",
+      "histoire": "Résidence étudiante située sur l'emprise même du campus, héritée de l'ancien site militaire.",
       "pedagogie": [],
       "services": [
         "Logements conventionnés Crous",
@@ -257,7 +259,7 @@
       ],
       "reperes": [
         "Gestion Crous de Toulouse-Occitanie",
-        "Côté IFMS, à 46 m de l'institut de santé",
+        "Côté IFMS",
         "La plus proche des salles de cours"
       ]
     },
@@ -265,7 +267,7 @@
       "semantic_id": "BAT_10_RESIDENCES_A",
       "titre": "Appartements chercheurs",
       "role": "Logements réservés aux chercheurs et aux invités, rue Franchet d'Espèrey, face au restaurant universitaire.",
-      "histoire": "Ces deux petits corps ne sont pas de la résidence étudiante, même s'ils sont gérés dans le même ensemble. Ils accueillent les chercheurs de passage, les invités d'un colloque, un enseignant en mission. Leur taille le dit : deux cents mètres carrés chacun, quand une résidence étudiante du campus en fait huit cents.",
+      "histoire": "Petits bâtiments distincts des résidences étudiantes : ils accueillent les chercheurs de passage, les invités d'un colloque ou les enseignants en mission.",
       "pedagogie": [],
       "services": [
         "Logement de courte et moyenne durée",
@@ -273,7 +275,6 @@
       ],
       "reperes": [
         "Rue Franchet d'Espèrey, face au restaurant universitaire",
-        "Environ 200 m² d'emprise chacun",
         "À ne pas confondre avec les résidences étudiantes"
       ]
     },
@@ -281,7 +282,7 @@
       "semantic_id": "BAT_10_RESIDENCES_B",
       "titre": "Appartements chercheurs",
       "role": "Logements réservés aux chercheurs et aux invités, rue Franchet d'Espèrey, face au restaurant universitaire.",
-      "histoire": "Ces deux petits corps ne sont pas de la résidence étudiante, même s'ils sont gérés dans le même ensemble. Ils accueillent les chercheurs de passage, les invités d'un colloque, un enseignant en mission. Leur taille le dit : deux cents mètres carrés chacun, quand une résidence étudiante du campus en fait huit cents.",
+      "histoire": "Petits bâtiments distincts des résidences étudiantes : ils accueillent les chercheurs de passage, les invités d'un colloque ou les enseignants en mission.",
       "pedagogie": [],
       "services": [
         "Logement de courte et moyenne durée",
@@ -289,13 +290,12 @@
       ],
       "reperes": [
         "Rue Franchet d'Espèrey, face au restaurant universitaire",
-        "Environ 200 m² d'emprise chacun",
         "À ne pas confondre avec les résidences étudiantes"
       ]
     },
     {
       "semantic_id": "BAT_11_IFMS",
-      "titre": "IFMS — Instituts de Formation aux Métiers de la Santé",
+      "titre": "IFMS, Instituts de formation aux métiers de la santé",
       "role": "Formations paramédicales, voisines du campus universitaire.",
       "histoire": "L'IFMS forme les professionnels paramédicaux du bassin albigeois. Il est distinct de l'INU Champollion mais partage son voisinage immédiat, et une partie des parcours étudiants passe de l'un à l'autre.",
       "pedagogie": [
@@ -332,7 +332,7 @@
       "semantic_id": "HORS_PLAN_ATELIER",
       "titre": "Atelier technique",
       "role": "Atelier technique : logistique, maintenance et entretien du campus.",
-      "histoire": "Bâtiment de service, hérité de l'emprise militaire. Il ne reçoit pas d'étudiants mais rend possible tout le reste : c'est de là que partent les interventions sur les salles, les réseaux et les extérieurs.",
+      "histoire": "Bâtiment de service hérité de l'emprise militaire, sans accueil d'étudiants : il abrite les équipes qui interviennent sur les salles, les réseaux et les extérieurs.",
       "pedagogie": [],
       "services": [
         "Équipe technique et logistique du campus",

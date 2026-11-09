@@ -14,7 +14,7 @@ Tout ce qui fait d'une maquette une **formation** reste à concevoir par le grou
 | Maquette du campus en hologramme, au 1/400e | `Assets/CampusXR/Modele/campus_holo.fbx` | fourni |
 | Sources Blender (hologramme et maquette texturée, v05) | `blender/` | fourni |
 | Sémantique du campus : bâtiments, étages, locaux | `Assets/CampusXR/Resources/campus_semantique.json` | fourni, partagé avec G2 |
-| Fiches des bâtiments | `Assets/CampusXR/Resources/fiches_batiments.json` | fourni, non branché |
+| Fiches des bâtiments (rôle, histoire, pédagogie, services) | `Assets/CampusXR/Resources/fiches_batiments.json` | fourni, transmis à l'agent, partagé avec G2 |
 | Rig XR mains et manettes, passthrough | exemples XR Interaction Toolkit, menu AMINJ | fourni |
 | Pointer, survoler et sélectionner un bâtiment | `Assets/AMINJ/Scripts/Runtime/BatimentCible.cs` | fourni |
 | Agent par le relais (texte) | `AgentRelais.cs` et `relais/` | fourni, fonction didactique à écrire |
@@ -56,8 +56,9 @@ un contexte, le relais ajoute la clé et les consignes, puis appelle OpenAI.
 | **Instruction** de l'agent (message système) | `relais/consignes_agent.md` | **à réécrire** : rôle, ce qu'il dit, ce qu'il ne dit jamais, forme |
 | Côté Unity : envoi de la question et réception de la réponse | `Assets/AMINJ/Scripts/Runtime/AgentRelais.cs` | brancher la voix, l'affichage |
 | Quand l'agent parle, et avec quelle demande | `Assets/AMINJ/Scripts/Runtime/ControleurSocle.cs` (`Selectionner()`) | décider du moment et de la demande |
-| **Connaissances** transmises : bâtiment, étages, locaux | `Assets/CampusXR/Resources/campus_semantique.json`, résumé par `CampusDonnees.Resume()` | enrichir ou filtrer |
-| Connaissances à brancher : fiches des bâtiments | `Assets/CampusXR/Resources/fiches_batiments.json` | à ajouter au contexte si utile |
+| **Connaissances** : bâtiment, étages, locaux | `Assets/CampusXR/Resources/campus_semantique.json` | enrichir ou filtrer |
+| **Connaissances** : fiche du bâtiment et présentation du campus | `Assets/CampusXR/Resources/fiches_batiments.json` | vérifier, compléter |
+| Assemblage du contexte envoyé à l'agent | `CampusDonnees.Resume()` dans `Assets/AMINJ/Scripts/Runtime/CampusDonnees.cs` | choisir ce que l'agent reçoit |
 | Traces xAPI envoyées au relais | `Assets/AMINJ/Scripts/Runtime/TraceXapi.cs` | choisir les verbes |
 | Journal des échanges et des traces | `relais/journal/*.jsonl` | lire pour l'évaluation et le débriefing |
 
