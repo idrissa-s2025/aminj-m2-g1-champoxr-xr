@@ -1,4 +1,4 @@
-# Ce que le groupe G1 conçoit
+# Ce que le groupe P1 conçoit
 
 Le socle montre une chaîne technique : pointer un bâtiment, l'identifier, en parler. Il ne
 fait rien apprendre. Les sept éléments ci-dessous sont ceux du dossier du module ; chacun
@@ -43,7 +43,7 @@ SSQ, ASAQ), lecture des traces.
 
 Ce que l'apprenant voit de son parcours à la fin, à partir des traces.
 
-## Coordination avec G2
+## Coordination avec P2
 
 Même maquette, même `campus_semantique.json`. Toute correction de données se fait dans le
 fichier commun et se signale à l'autre équipe.

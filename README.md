@@ -1,4 +1,4 @@
-# ChampoXR · équipe réalité mixte (G1)
+# ChampoXR · équipe réalité mixte (P1)
 
 Socle de projet du Master 2 AMINJ, INU Champollion, 2026-2027.
 Module « Développer une ingénierie pédagogique pour les serious games ».
@@ -12,9 +12,9 @@ Tout ce qui fait d'une maquette une **formation** reste à concevoir par le grou
 | Élément | Où | État |
 |---|---|---|
 | Maquette du campus en hologramme, au 1/400e | `Assets/CampusXR/Modele/campus_holo.fbx` | fourni |
-| Sources Blender (hologramme et maquette texturée, v05) | `blender/` | fourni |
-| Sémantique du campus : bâtiments, étages, locaux | `Assets/CampusXR/Resources/campus_semantique.json` | fourni, partagé avec G2 |
-| Fiches des bâtiments (rôle, histoire, pédagogie, services) | `Assets/CampusXR/Resources/fiches_batiments.json` | fourni, transmis à l'agent, partagé avec G2 |
+| Sources Blender (maquette texturée et hologramme, version du 23/09) : textures dans `blender/textures`, sans dépendance externe ni donnée LiDAR | `blender/` | fourni |
+| Sémantique du campus : bâtiments, étages, locaux | `Assets/CampusXR/Resources/campus_semantique.json` | fourni, partagé avec P2 |
+| Fiches des bâtiments (rôle, histoire, pédagogie, services) | `Assets/CampusXR/Resources/fiches_batiments.json` | fourni, transmis à l'agent, partagé avec P2 |
 | Rig XR mains et manettes, passthrough | exemples XR Interaction Toolkit, menu AMINJ | fourni |
 | Pointer, survoler et sélectionner un bâtiment | `Assets/AMINJ/Scripts/Runtime/BatimentCible.cs` | fourni |
 | Agent par le relais (texte) | `AgentRelais.cs` et `relais/` | fourni, fonction didactique à écrire |
@@ -31,7 +31,7 @@ la progression, l'évaluation et le débriefing. C'est le travail du groupe : vo
 
 1. **Unity 6000.6.0f1** avec le module *Android Build Support*. Ouvrir le dossier du dépôt
    depuis Unity Hub. Le premier import prend une dizaine de minutes.
-   Cloner le dépôt dans un chemin court (par exemple `C:\aminj\g1`) : Windows refuse les
+   Cloner le dépôt dans un chemin court (par exemple `C:\aminj\p1`) : Windows refuse les
    chemins trop longs dans `Library/`.
 2. Ouvrir `Assets/Scenes/Socle_Campus.unity` : rig XR, passthrough, socle à hauteur de table,
    maquette, 23 bâtiments sélectionnables. Le menu **AMINJ > 1. Monter la scène du socle** la
