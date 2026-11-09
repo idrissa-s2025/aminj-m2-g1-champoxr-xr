@@ -44,6 +44,28 @@ la progression, l'évaluation et le débriefing. C'est le travail du groupe : vo
    l'adresse IP du PC, sur le même réseau Wi-Fi.
 5. *File > Build Profiles* : Android, Meta Quest 3, puis *Build and Run*.
 
+## L'agent IA : où tout se trouve
+
+L'agent passe toujours par le relais : le client (casque ou navigateur) envoie une question et
+un contexte, le relais ajoute la clé et les consignes, puis appelle OpenAI.
+
+| Ce qui | Fichier | Ce que le groupe y fait |
+|---|---|---|
+| Appel à OpenAI, clé, modèle, plafonds | `relais/serveur.mjs` | rien en principe ; modèle et plafonds se règlent dans `relais/.env` |
+| Clé et réglages (`OPENAI_API_KEY`, `OPENAI_MODEL`, `MAX_APPELS_JOUR`) | `relais/.env`, copié de `relais/env.exemple` | coller la clé ; jamais dans Git |
+| **Instruction** de l'agent (message système) | `relais/consignes_agent.md` | **à réécrire** : rôle, ce qu'il dit, ce qu'il ne dit jamais, forme |
+| Côté Unity : envoi de la question et réception de la réponse | `Assets/AMINJ/Scripts/Runtime/AgentRelais.cs` | brancher la voix, l'affichage |
+| Quand l'agent parle, et avec quelle demande | `Assets/AMINJ/Scripts/Runtime/ControleurSocle.cs` (`Selectionner()`) | décider du moment et de la demande |
+| **Connaissances** transmises : bâtiment, étages, locaux | `Assets/CampusXR/Resources/campus_semantique.json`, résumé par `CampusDonnees.Resume()` | enrichir ou filtrer |
+| Connaissances à brancher : fiches des bâtiments | `Assets/CampusXR/Resources/fiches_batiments.json` | à ajouter au contexte si utile |
+| Traces xAPI envoyées au relais | `Assets/AMINJ/Scripts/Runtime/TraceXapi.cs` | choisir les verbes |
+| Journal des échanges et des traces | `relais/journal/*.jsonl` | lire pour l'évaluation et le débriefing |
+
+Le relais relit `consignes_agent.md` à chaque question : une modification s'applique sans
+redémarrer. Les connaissances ne sont pas « apprises » par le modèle : elles lui sont
+transmises à chaque échange dans le contexte. Ce qui n'est pas dans le contexte, l'agent doit
+dire qu'il ne le sait pas.
+
 ## Règles
 
 - **La clé OpenAI ne quitte jamais le relais.** Jamais dans Unity, un APK, Git ou une capture.
